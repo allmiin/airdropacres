@@ -36,19 +36,20 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
             padding: 20px;
             background: url('Untitled-2.png') no-repeat center center;
             background-size: cover;
             position: relative;
-            text-align: center;
+            text-align: left;
         }
         .main .content {
             z-index: 1;
             position: relative;
-            max-width: 80%; /* Limit content width */
-            text-align: left;
+            max-width: 800px; /* Adjust max-width for content */
+            margin-left: auto; /* Align content to left */
+            padding-right: 20px; /* Provide space for image */
         }
         .main h1 {
             font-size: 48px;
@@ -61,10 +62,12 @@
             line-height: 1.5;
         }
         .main img {
-            max-width: 30%; /* Adjust image width */
+            max-width: 50%; /* Adjust image size */
             height: auto;
-            margin-left: auto; /* Align to right */
-            margin-top: -60px; /* Adjust vertical alignment */
+            position: absolute; /* Position relative to .main */
+            top: 50%; /* Align to center vertically */
+            right: 20px; /* Distance from the right */
+            transform: translateY(-50%); /* Center vertically */
         }
         .overlay {
             position: absolute;
@@ -115,8 +118,8 @@
         <div class="content">
             <h1>Airdrop Acres</h1>
             <p>Cross-Chain Airdrop Farming Automated, All in one Place.</p>
-            <img src="aur.png" alt="Japanese Garden Image">
         </div>
+        <img src="aur.png" alt="Japanese Garden Image">
     </div>
     <div class="bounce-arrow"></div>
 </body>
