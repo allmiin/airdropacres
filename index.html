@@ -34,9 +34,8 @@
         }
         .main {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: space-between; /* Align items independently */
+            align-items: center;
             height: 100vh;
             padding: 20px;
             background: url('Untitled-2.png') no-repeat center center;
@@ -45,11 +44,7 @@
             text-align: left;
         }
         .main .content {
-            z-index: 1;
-            position: relative;
-            max-width: 800px; /* Adjust max-width for content */
-            margin-left: auto; /* Align content to left */
-            padding-right: 20px; /* Provide space for image */
+            max-width: 50%; /* Adjust max width for text */
         }
         .main h1 {
             font-size: 48px;
@@ -62,12 +57,9 @@
             line-height: 1.5;
         }
         .main img {
-            max-width: 50%; /* Adjust image size */
+            max-width: 30%; /* Adjust image size */
             height: auto;
-            position: absolute; /* Position relative to .main */
-            top: 50%; /* Align to center vertically */
-            right: 20px; /* Distance from the right */
-            transform: translateY(-50%); /* Center vertically */
+            margin-left: auto; /* Align to right */
         }
         .overlay {
             position: absolute;
