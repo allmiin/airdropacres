@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dreamy Japanese Garden</title>
+    <title>Airdrop Acres</title>
     <style>
         body {
             margin: 0;
@@ -34,18 +34,47 @@
         }
         .main {
             display: flex;
-            height: 100vh;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100vh;
             padding: 20px;
+            text-align: center;
         }
         .main h1 {
             color: #4caf50;
-            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .main p {
+            margin-bottom: 20px;
         }
         .main img {
             max-width: 50%;
             height: auto;
+        }
+        .bounce-arrow {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #4caf50;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 10px;
+            transform: rotate(45deg);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) rotate(45deg);
+            }
+            40% {
+                transform: translateY(-20px) rotate(45deg);
+            }
+            60% {
+                transform: translateY(-10px) rotate(45deg);
+            }
         }
     </style>
 </head>
@@ -53,12 +82,16 @@
     <nav class="navbar">
         <div class="logo">Airdrop Acres</div>
         <div class="nav-links">
+            <a href="#farms">Farms</a>
+            <a href="#faqs">FAQs</a>
+            <a href="#connect-wallet">Connect Wallet</a>
         </div>
     </nav>
     <div class="main">
-        <h1>Airdrop Acres</h1><br>
+        <h1>Airdrop Acres</h1>
         <p>Cross-Chain Airdrop Farming Automated, All in one Place.</p>
         <img src="aur.png" alt="Japanese Garden Image">
     </div>
+    <div class="bounce-arrow"></div>
 </body>
 </html>
