@@ -38,9 +38,13 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            background: url('background-image.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
         }
-        .main .text {
-            max-width: 50%;
+        .main .content {
+            z-index: 1;
+            position: relative;
         }
         .main h1 {
             font-size: 48px;
@@ -54,6 +58,17 @@
         .main img {
             max-width: 50%;
             height: auto;
+            z-index: 1;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(46, 46, 46, 0.5); /* Semi-transparent overlay */
+            z-index: 0;
         }
         .bounce-arrow {
             position: fixed;
@@ -91,11 +106,12 @@
         </div>
     </nav>
     <div class="main">
-        <div class="text">
+        <div class="overlay"></div>
+        <div class="content">
             <h1>Airdrop Acres</h1>
             <p>Cross-Chain Airdrop Farming Automated, All in one Place.</p>
+            <img src="aur.png" alt="Japanese Garden Image">
         </div>
-        <img src="aur.png" alt="Japanese Garden Image">
     </div>
     <div class="bounce-arrow"></div>
 </body>
