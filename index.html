@@ -34,18 +34,21 @@
         }
         .main {
             display: flex;
-            flex-direction: column;
+            height: 100vh;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             padding: 20px;
-            text-align: center;
+        }
+        .main .text {
+            max-width: 50%;
         }
         .main h1 {
+            font-size: 48px;
             color: #4caf50;
             margin-bottom: 10px;
         }
         .main p {
+            font-size: 20px;
             margin-bottom: 20px;
         }
         .main img {
@@ -88,8 +91,10 @@
         </div>
     </nav>
     <div class="main">
-        <h1>Airdrop Acres</h1>
-        <p>Cross-Chain Airdrop Farming Automated, All in one Place.</p>
+        <div class="text">
+            <h1>Airdrop Acres</h1>
+            <p>Cross-Chain Airdrop Farming Automated, All in one Place.</p>
+        </div>
         <img src="aur.png" alt="Japanese Garden Image">
     </div>
     <div class="bounce-arrow"></div>
