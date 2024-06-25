@@ -47,6 +47,9 @@
         .main .content {
             z-index: 1;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         .main h1 {
             font-size: 48px;
@@ -62,6 +65,7 @@
             height: auto;
             z-index: 1;
             position: relative;
+            align-self: flex-end; /* Aligns the image to the right */
         }
         .overlay {
             position: absolute;
@@ -102,6 +106,9 @@
     <nav class="navbar">
         <div class="logo">Airdrop Acres</div>
         <div class="nav-links">
+            <a href="#farms">Farms</a>
+            <a href="#faqs">FAQs</a>
+            <a href="#connect-wallet">Connect Wallet</a>
         </div>
     </nav>
     <div class="main">
