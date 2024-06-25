@@ -61,7 +61,7 @@
         .main h1 span {
             position: relative; /* Ensure relative position for animations */
             display: inline-block; /* Ensure inline display for animations */
-            animation: bounce-word 3s infinite, fade-out 6s infinite; /* Animation definitions */
+            animation: bounce-word 3s infinite; /* Animation definition */
         }
         @keyframes bounce-word {
             0%, 20%, 50%, 80%, 100% {
@@ -72,23 +72,6 @@
             }
             60% {
                 transform: translateY(-10px);
-            }
-        }
-        @keyframes fade-out {
-            0%, 20%, 50%, 80%, 100% {
-                opacity: 1;
-            }
-            25%, 45%, 65%, 85% {
-                opacity: 0;
-            }
-            90%, 95%, 98% {
-                opacity: 0;
-                transform: translateY(0);
-            }
-            99%, 100% {
-                opacity: 0;
-                transform: translateY(0);
-                display: none;
             }
         }
         .main p {
@@ -149,7 +132,7 @@
     <div class="main">
         <div class="overlay"></div>
         <div class="content">
-            <h1>AIRDROP <span id="animated-word">Farming</span></h1>
+            <h1>AIRDROP <span id="animated-word">ACRES</span></h1>
             <p>Cross-Chain Airdrop Farming Automated, All in one Place.</p>
             <img src="aur.png" alt="Japanese Garden Image">
         </div>
@@ -158,18 +141,16 @@
 
     <script>
         // JavaScript to handle animation of the word in <h1>
-        const words = ["Farming", "Investing", "Earning"]; // Array of words to cycle through
-        let currentWordIndex = 0; // Index to track the current word
-
         function animateWord() {
             const animatedWord = document.getElementById("animated-word");
-            animatedWord.textContent = words[currentWordIndex]; // Set current word
-
-            currentWordIndex = (currentWordIndex + 1) % words.length; // Cycle to next word
+            animatedWord.classList.remove("bounce"); // Remove existing bounce class if any
+            setTimeout(() => {
+                animatedWord.classList.add("bounce"); // Add bounce class after a short delay
+            }, 100); // Adjust delay as needed for smooth animation
         }
 
-        // Execute the word animation every 3 seconds
-        setInterval(animateWord, 3000);
+        // Execute the word animation every 5 seconds
+        setInterval(animateWord, 5000);
     </script>
 </body>
 </html>
