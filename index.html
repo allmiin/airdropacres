@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,39 +36,39 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center; /* Center horizontally */
             height: 100vh;
             padding: 20px;
             background: url('Untitled-2.png') no-repeat center center;
             background-size: cover;
             position: relative;
-            text-align: left;
+            text-align: center; /* Center text horizontally */
         }
         .main .content {
             z-index: 1;
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            max-width: 80%; /* Limit content width */
         }
         .main h1 {
-            font-size: 60px;
+            font-size: 48px;
             color: #4caf50;
             margin-bottom: 10px;
-            margin-left: 20px;
+            position: relative; /* Ensure position for child span */
+            display: inline-block; /* Ensure inline display for child span */
         }
-        .main p {
-            font-size: 40px;
-            margin-bottom: 20px;
-            margin-left: 20px;
+        .main h1 span {
+            animation: bounce-word 3s infinite; /* Animation definition */
         }
-        .main img {
-            max-width: 50%;
-            height: auto;
-            z-index: 1;
-            position: relative;
-            align-self: flex-end; 
-            margin-top: -90px; 
+        @keyframes bounce-word {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
         }
         .overlay {
             position: absolute;
@@ -116,11 +117,27 @@
     <div class="main">
         <div class="overlay"></div>
         <div class="content">
-            <h1>AIRDROP ACRES</h1>
+            <h1>AIRDROP <span id="animated-word">Farming</span></h1>
             <p>Cross-Chain Airdrop Farming Automated, All in one Place.</p>
             <img src="aur.png" alt="Japanese Garden Image">
         </div>
     </div>
     <div class="bounce-arrow"></div>
+
+    <script>
+        // JavaScript to handle animation of the word in <h1>
+        const words = ["Farming", "Investing", "Earning"]; // Array of words to cycle through
+        let currentWordIndex = 0; // Index to track the current word
+
+        function animateWord() {
+            const animatedWord = document.getElementById("animated-word");
+            animatedWord.textContent = words[currentWordIndex]; // Set current word
+
+            currentWordIndex = (currentWordIndex + 1) % words.length; // Cycle to next word
+        }
+
+        // Execute the word animation every 3 seconds
+        setInterval(animateWord, 3000);
+    </script>
 </body>
 </html>
